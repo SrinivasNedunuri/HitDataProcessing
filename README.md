@@ -19,7 +19,7 @@ Tools used for development, continous integration and deployment:
 
 Running application 
 
-`python3 - HDataProcessing.py -f input/data[4][63][84][3][80].tsv`
+`python3 HDataProcessing.py -f input/data[4][63][84][3][80].tsv`
 
 Project Organization
 ------------
