@@ -8,21 +8,6 @@ Data Overview
 ------------
 ![image](https://user-images.githubusercontent.com/54639431/139508834-361a6d67-985f-444b-a6e8-7f4d4815594f.png)
 
-Development
-------------
-class: HitDataProcessor
-    A class to represent Hitdata file object and process it
-    Attributes: dict_reader_obj (:obj:csv.DictReader): iterator yields each row as ordered dictionary.
-                output_header (list) : Desired output header
-                product_attr (list): List of product attributes
-                event_list (dict): event description by event_id
-                client (str): client website.
-                output_f (str): output file name
-    Methods: 
-                write_output - Method to write out list of rows to an output path specified
-                Args:
-                    list_of_rows (list) : list of tuples
---------
 Getting Started
 ------------
 Tools used for development, continous integration and deployment:
@@ -52,5 +37,18 @@ Project Organization
         ├── workflows           
             └── main.yml   <- Workflow script for github action CI/CD
         
-
+Application Overview
+------------
+1. HitDataProcessor class is designed in such a way that it would work with any HitData with referrer urls and product attributes.
+2. For now, the application can answer only How much revenue is the client getting from external Search Engines, such as Google, Yahoo and
+MSN, and which keywords are performing the best based on revenue? But it can be further enhanced to answer even more questions. 
+3. For finding out the class functionalities and attributes pleasse go through the HDataProcessing.py. It is all nicely documented with docstrings.
+4. There are couple of assumption in the implementation one is no overlapping sessions for an ip (i.e) if a session starts, new session cannot be started until
+   first session(that involves purchase event) ends for an ip and the other data is ordered by hit_gmt_time in ascending order.
+ 
+TO DO:
+------------
+1. Unit test cases
+2. Serverless deployment
+3. Business problem presenation
 
